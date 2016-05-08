@@ -50,34 +50,33 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.cars', {
+      url: '/cars',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
+        'tab-cars': {
+          templateUrl: 'templates/tab-cars.html',
           controller: 'ChatsCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    .state('tab.car-make-list', {
+      url: '/cars/:carMake',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
+        'tab-cars': {
+          templateUrl: 'templates/car-make-list.html',
           controller: 'ChatDetailCtrl'
         }
       }
     })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+    .state('tab.car-details', {
+      url: '/cars/:carMake/:carModel/:carYear',
+      views: {
+        'tab-cars': {
+          templateUrl: 'templates/car-details.html',
+          controller: 'CarDetailsCtrl'
+        }
       }
-    }
-  });
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');

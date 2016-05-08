@@ -1,0 +1,17 @@
+<ion-view view-title="{{carModelName}} - {{carYearNumber}}">
+  <ion-content class="padding">
+    <ion-list>
+      <div class="card" ng-repeat="carDetail in carDetails">
+        <div class="item item-divider">
+          {{carDetail.name}}
+        </div>
+        <div class="item item-text-wrap">
+          <b>Body</b> - {{carDetail.submodel.modelName}}
+        </div>
+        <div class="item item-divider">
+          <b>Trim</b> - {{carDetail.trim}}
+        </div>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

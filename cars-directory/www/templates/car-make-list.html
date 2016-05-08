@@ -1,0 +1,19 @@
+<ion-view view-title="{{carMakeName}}">
+  <ion-content class="padding">
+      <ion-list>
+        <div ng-repeat="car in carMake">
+          <ion-item class="item-stable"
+            ng-click="toggleCar(car)"
+            ng-class="{active: isCarShown(car)}">
+            <i class="icon" ng-class="isCarShown(car) ? 'ion-ios-minus-empty' : 'ion-ios-arrow-down'"></i> 
+            &nbsp;
+            <b>{{car.name}}</b>
+          </ion-item>
+          <ion-item class="item-accordion item-icon-right" ng-repeat="year in car.years" ng-show="isCarShown(car)" href="#/tab/cars/{{carMakeName}}/{{car.niceName}}/{{year.year}}">
+            Make Year - {{year.year}}
+            <i class="icon ion-arrow-right-c"></i> 
+          </ion-item>
+        </div>  
+    </ion-list>
+  </ion-content>
+</ion-view>
