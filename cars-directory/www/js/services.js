@@ -6,7 +6,6 @@ angular.module('starter.services', [])
   // Some fake testing data
   var cars = $http.get('http://api.edmunds.com/api/vehicle/v2/makes?fmt=json&api_key=rgp6f2zzkjawwymtmrcqunnm');
 
-
   return {
     all: function() {
       return cars;

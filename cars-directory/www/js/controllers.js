@@ -45,7 +45,6 @@ angular.module('starter.controllers', [])
   $scope.carYearNumber = $stateParams.carYear;
   Cars.getModel($stateParams.carMake, $stateParams.carModel, $stateParams.carYear).then(function(state){
     $scope.carDetails = state.data.styles;
-    console.log($scope.carDetails);
   });
 })
 
