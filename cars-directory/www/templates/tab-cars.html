@@ -1,7 +1,13 @@
 <ion-view view-title="Car Makes">
+  <ion-header-bar class="bar-light bar-subheader">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="searchCars">
+      </label>
+  </ion-header-bar>
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="car in cars" type="item-text-wrap" href="#/tab/cars/{{car.niceName}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="car in cars | filter:searchCars" type="item-text-wrap" href="#/tab/cars/{{car.niceName}}" >
         <img ng-src="{{chat.face}}">
         <h2>{{car.name}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i>

@@ -1,7 +1,13 @@
 <ion-view view-title="{{carMakeName}}">
+  <ion-header-bar class="bar-light bar-subheader">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="searchCarsMake">
+      </label>
+  </ion-header-bar>
   <ion-content class="padding">
       <ion-list>
-        <div ng-repeat="car in carMake">
+        <div ng-repeat="car in carMake | filter:searchCarsMake">
           <ion-item class="item-stable"
             ng-click="toggleCar(car)"
             ng-class="{active: isCarShown(car)}">

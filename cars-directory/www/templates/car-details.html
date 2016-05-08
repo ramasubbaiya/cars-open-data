@@ -1,7 +1,13 @@
 <ion-view view-title="{{carModelName}} - {{carYearNumber}}">
+  <ion-header-bar class="bar-light bar-subheader">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="searchCarDetail">
+      </label>
+  </ion-header-bar>
   <ion-content class="padding">
     <ion-list>
-      <div class="card" ng-repeat="carDetail in carDetails">
+      <div class="card" ng-repeat="carDetail in carDetails | filter:searchCarDetail">
         <div class="item item-divider">
           {{carDetail.name}}
         </div>
