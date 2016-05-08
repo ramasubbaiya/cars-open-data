@@ -10,6 +10,7 @@
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="car in cars | filter:searchCars" type="item-text-wrap" href="#/tab/cars/{{car.niceName}}" >
         <img ng-src="{{chat.face}}">
         <h2>{{car.name}}</h2>
+        <p>No. of models: <b>{{car.models.length}}</b></p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>

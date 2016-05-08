@@ -13,10 +13,10 @@
             ng-class="{active: isCarShown(car)}">
             <i class="icon" ng-class="isCarShown(car) ? 'ion-ios-minus-empty' : 'ion-ios-arrow-down'"></i> 
             &nbsp;
-            <b>{{car.name}}</b>
+            <b>{{car.name}} ({{car.years.length}})</b>
           </ion-item>
           <ion-item class="item-accordion item-icon-right" ng-repeat="year in car.years" ng-show="isCarShown(car)" href="#/tab/cars/{{carMakeName}}/{{car.niceName}}/{{year.year}}">
-            Make Year - {{year.year}}
+            Make Year - <b>{{year.year}}</b> : No. of styles - <b>{{year.styles.length}}</b>
             <i class="icon ion-arrow-right-c"></i> 
           </ion-item>
         </div>  
